@@ -42,7 +42,7 @@ int main()
 	
 	strcpy(temp, arr);
 	begin = clock();
-	Block_swap(arr, n, d);
+	block_swap(arr, n, d);
 	end = clock();
 	printf("Time spent for Block-Swap : %f s\n", (double)(end - begin)/CLOCKS_PER_SEC);
 	
@@ -53,7 +53,6 @@ int main()
 	Reverse(arr, n, d);
 	end = clock();
 	printf("Time spent for Reverse : %f s\n", (double)(end - begin)/CLOCKS_PER_SEC);
-	
-	printf("asdasdasd\n");
+
 	return 0;
 }
