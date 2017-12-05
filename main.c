@@ -39,13 +39,13 @@ int main()
 	end = clock();
 	printf("Time spent for trivial : %f s\n", (double)(end - begin)/CLOCKS_PER_SEC);
 	
-	/* Block-Swap Rotation
+	
 	strcpy(temp, arr);
 	begin = clock();
 	Block_swap(arr, n, d);
 	end = clock();
 	printf("Time spent for Block-Swap : %f s\n", (double)(end - begin)/CLOCKS_PER_SEC);
-	*/
+	
 
 	// Reverse Rotation
 	strcpy(temp, arr);
