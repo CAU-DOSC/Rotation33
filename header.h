@@ -8,7 +8,7 @@ int gcd(int, int);
 
 void juggling(char*, int, int);
 void trivialSolution(char* ary, int length, int move);
-void swap(char*, int , int , int );
-void block_swap(char*, int , int );
+void Swap(char*, int , int , int );
+void Block_Swap(char arr[], int , int );
 void reverse(char*, int , int );
 void Reverse(char*, int , int );

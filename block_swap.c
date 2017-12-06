@@ -1,40 +1,59 @@
-#include"header.h"
-
-void swap(char* arr, int i1, int i2, int bs)
+void Swap(char arr[], int a, int b, int d)
 {
-	for (int i = 0; i < bs; i++)
+	for (int i = 0; i < d; ++i)
 	{
-		char temp;
-		temp= arr[i1 + i];
-		arr[i1 + i] = arr[i2 + i];
-		arr[i2 + i] = temp;
+		char temp = arr[a + i];
+		arr[a + i] = arr[b + i];
+		arr[b + i] = temp;
 	}
 }
 
-void block_swap(char* arr, int bs, int arrs)
+void Block_Swap(char arr[], int n, int d)
 {
-	//block의 크기가 0이거나 배열성분의 개수 같을경우 swap된 결과는 같다
-	if (bs == 0 || bs == arrs)
-		return;
-
-	//block의 크기가 배열성분의 개수의 절반일때
-	if (arrs - bs == bs)
+	int temp = 0, left_d = 0, temp_d = 0;
+	if (d == 0 || d == n)
 	{
-		swap(arr, 0, arrs - bs, bs);
 		return;
 	}
-
-	//block의 크기가 배열 성분의 개수-blcok의 크기보다 작을 때
-	if (bs < arrs - bs)
+	else if (d < 0)
 	{
-		swap(arr, 0, arrs - bs, bs);
-		block_swap(arr, bs, arrs - bs);
+		left_d = -d;
+		int size1 = left_d;
+		int size2 = n - left_d;
+		while (size1 != size2)
+		{
+			if (size1 < size2)
+			{
+				Swap(arr, left_d - size1, left_d + size2 - size1, size1);
+				size2 -= size1;
+			}
+			else
+			{
+				Swap(arr, left_d - size1, left_d, size2);
+				size1 -= size2;
+			}
+		}
+		Swap(arr, left_d - size1, left_d, size1);
 	}
-
-	//block의 크기가 배열 성분의 개수-block의 크기보다 클 때
-	if (bs > arr - bs)
+	else
 	{
-		swap(arr, 0, bs, arrs - bs);
-		block_swap(arr + arrs - bs, (2 * bs) - arrs, bs);
+		temp_d = (n - d);
+		int size1 = temp_d;
+		int size2 = n - temp_d;
+		while (size1 != size2)
+		{
+			if (size1 < size2)
+			{
+				Swap(arr, temp_d - size1, temp_d + size2 - size1, size1);
+				size2 -= size1;
+			}
+			else
+			{
+				Swap(arr, temp_d - size1, temp_d, size2);
+				size1 -= size2;
+			}
+		}
+		Swap(arr, temp_d - size1, temp_d, size1);
 	}
+	printf("\n%s\n", arr);
 }

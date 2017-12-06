@@ -22,6 +22,8 @@ int main()
 	arr[n] = '\0';
 	temp[n] = '\0';
 
+	printf("\ncreated: %s\n", arr);
+
 	printf("Input d to shift: ");
 	scanf("%d", &d);
 
@@ -42,7 +44,7 @@ int main()
 	
 	strcpy(temp, arr);
 	begin = clock();
-	block_swap(arr, n, d);
+	Block_Swap(arr, n, d);
 	end = clock();
 	printf("Time spent for Block-Swap : %f s\n", (double)(end - begin)/CLOCKS_PER_SEC);
 	

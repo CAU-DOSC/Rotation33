@@ -28,4 +28,5 @@ void juggling(char* arr, int n, int d) {
 		}
 		arr[j] = temp;
 	}
+	printf("\n%s\n", arr);
 }

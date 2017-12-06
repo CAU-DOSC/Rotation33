@@ -16,4 +16,5 @@ void trivialSolution(char* ary, int length, int move) {
 		ary[length - move + i] = str[i];
 	}
 	free(str);
+	printf("\n%s\n", ary);
 }
