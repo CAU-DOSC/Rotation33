@@ -41,7 +41,7 @@ int main()
 	end = clock();
 	printf("Time spent for trivial : %f s\n", (double)(end - begin)/CLOCKS_PER_SEC);
 	
-	
+	// Block_Swap Rotation
 	strcpy(temp, arr);
 	begin = clock();
 	Block_Swap(arr, n, d);
@@ -55,6 +55,8 @@ int main()
 	Reverse(arr, n, d);
 	end = clock();
 	printf("Time spent for Reverse : %f s\n", (double)(end - begin)/CLOCKS_PER_SEC);
-
+	
+	free(arr);
+	free(temp);
 	return 0;
 }
